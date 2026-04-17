@@ -2,7 +2,7 @@ package libveritas
 
 // #cgo linux,amd64 LDFLAGS: ${SRCDIR}/native/linux-amd64/liblibveritas_uniffi.a -lm -ldl -lpthread
 // #cgo darwin,arm64 LDFLAGS: ${SRCDIR}/native/darwin-arm64/liblibveritas_uniffi.a -framework Security -framework CoreFoundation -lm
-// #cgo windows,amd64 LDFLAGS: ${SRCDIR}/native/windows-amd64/libveritas_uniffi.lib -lws2_32 -lbcrypt -luserenv -lntdll
+// #cgo windows,amd64 LDFLAGS: -L${SRCDIR}/native/windows-amd64 -l:libveritas_uniffi.lib -lws2_32 -lbcrypt -luserenv -lntdll
 // #include <libveritas_uniffi.h>
 import "C"
 
